@@ -28,7 +28,7 @@ for sentence in sentences:
 # 結果をテキストファイルに保存
 output_path = 'test_data_only_final_chapter.txt'
 with open(output_path, 'w', encoding='utf-8') as output_file:
-    for result in concatenated_result:
-        output_file.write(result + "\n")
+    # すべての結果を一つの文字列に連結してからファイルに書き込む
+    output_file.write(''.join(concatenated_result))
 
 print("ファイルが保存されました:", output_path)
