@@ -12,6 +12,12 @@ start_index = text.find(start_marker) + len(start_marker)
 end_index = text.find(end_marker)
 clean_text = text[start_index:end_index]
 
+# 最後の "chapter" 以前のテキストのみを処理
+# "chapter" の最後の出現位置を見つける
+last_chapter_index = clean_text.rfind("Chapter")
+if last_chapter_index != -1:
+    clean_text = clean_text[:last_chapter_index]
+
 # 文ごとに処理し、各単語の最初の2文字とその単語を '/' で連結
 sentences = re.split(r'(?<=[.!?])\s+', clean_text)
 training_data = []
@@ -21,7 +27,7 @@ for sentence in sentences:
     training_data.append(training_sentence + " ")  # 各行の終わりに半角スペースを追加
 
 # ファイルに保存
-output_path = 'first-two-char_corpus_from84.txt'
+output_path = 'first-two-char_corpus_from84_no_final_chapter.txt'
 with open(output_path, 'w', encoding='utf-8') as file:
     for entry in training_data:
         file.write(f"{entry}\n")
