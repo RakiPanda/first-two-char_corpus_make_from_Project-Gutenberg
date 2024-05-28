@@ -16,8 +16,8 @@ def calculate_accuracy(original, estimated):
     return (matches / total) * 100
 
 # File paths
-original_path = 'test_data_only_final_chapter_origin_for_comparison.txt'
-estimated_path = 'estimated_sentence_from_test_data.txt'
+original_path = 'test_data_only_final_chapter_origin_for_comparison_84.txt'
+estimated_path = 'estimated_sentence_from_test_data_84.txt'
 output_csv_path = '84_accuracy.csv'
 
 # Process files

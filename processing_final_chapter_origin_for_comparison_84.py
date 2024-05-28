@@ -1,8 +1,8 @@
 import re
 
 # ファイルの読み込み
-input_path = 'test_data_only_final_chapter_origin.txt'
-output_path = 'test_data_only_final_chapter_origin_for_comparison.txt'
+input_path = 'test_data_only_final_chapter_origin_84.txt'
+output_path = 'test_data_only_final_chapter_origin_for_comparison_84.txt'
 
 # 文に分割し、それぞれを改行で区切る処理を行う
 def process_text(text):

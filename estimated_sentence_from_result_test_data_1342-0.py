@@ -1,8 +1,8 @@
 import re
 
 # ファイルの読み込み
-input_path = 'result_test_data_only_final_chapter_ver_no_UNK.txt'
-output_path = 'estimated_sentence_from_test_data.txt'
+input_path = 'result_test_data_only_final_chapter_ver_no_UNK_1342-0.txt'
+output_path = 'estimated_sentence_from_test_data_1342-0.txt'
 
 with open(input_path, 'r', encoding='utf-8') as file:
     lines = file.readlines()

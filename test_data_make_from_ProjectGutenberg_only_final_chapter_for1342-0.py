@@ -1,7 +1,7 @@
 import re
 
 # テキストファイルの読み込み
-file_path = '84.txt'
+file_path = '1342-0.txt'
 with open(file_path, 'r', encoding='utf-8') as file:
     text = file.read()
 
@@ -20,13 +20,13 @@ for sentence in sentences:
     concatenated_result.append(''.join(processed_words))
 
 # 最初の2文字だけの結果をファイルに保存
-output_path_short = 'test_data_only_final_chapter.txt'
+output_path_short = 'test_data_only_final_chapter_1342-0.txt'
 with open(output_path_short, 'w', encoding='utf-8') as output_file:
     for result in concatenated_result:
         output_file.write(result + "\n")
 
 # 元の文章をファイルに保存
-output_path_full = 'test_data_only_final_chapter_origin.txt'
+output_path_full = 'test_data_only_final_chapter_origin_1342-0.txt'
 with open(output_path_full, 'w', encoding='utf-8') as output_file:
     for sentence in sentences:
         output_file.write(sentence + "\n")
