@@ -16,19 +16,14 @@ sentences = re.split(r'(?<=[.!?])\s+', last_chapter_text)
 concatenated_result = []
 for sentence in sentences:
     words = re.findall(r'\b\w+\b', sentence)
-    # 各単語の最初の2文字を連結し、単語が1文字の場合は後ろにスペースを追加する
-    processed_words = []
-    for word in words:
-        if len(word) == 1:
-            processed_words.append(word[:2] + " ")  # 1文字単語の後にスペースを追加
-        else:
-            processed_words.append(word[:2])
+    # 各単語の最初の2文字を連結する。単語が1文字の場合、スペースを追加せずそのまま使用
+    processed_words = [word[:2] for word in words]
     concatenated_result.append(''.join(processed_words))
 
 # 結果をテキストファイルに保存
 output_path = 'test_data_only_final_chapter.txt'
 with open(output_path, 'w', encoding='utf-8') as output_file:
-    # すべての結果を一つの文字列に連結してからファイルに書き込む
-    output_file.write(''.join(concatenated_result))
+    for result in concatenated_result:
+        output_file.write(result + "\n")
 
 print("ファイルが保存されました:", output_path)
