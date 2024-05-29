@@ -16,8 +16,8 @@ def calculate_accuracy(original, estimated):
 
 # File paths
 original_path = 'test_data_only_final_chapter_origin_for_comparison_84.txt'
-estimated_path = 'estimated_sentence_from_test_data_84_by_84mod.txt'
-output_csv_path = '84_accuracy_by_84mod.csv'
+estimated_path = 'estimated_sentence_from_test_data_84_by_1342-0mod.txt'
+output_csv_path = '84_accuracy_by_1342-0mod.csv'
 
 # Process files
 original_data = read_and_process_file(original_path)
@@ -43,12 +43,12 @@ with open(output_csv_path, 'w', newline='', encoding='utf-8') as csvfile:
 # Plotting the histogram of accuracies
 accuracy_values = [acc[2] for acc in accuracies]
 plt.hist(accuracy_values, bins=10, edgecolor='black')
-plt.title('Accuracy Distribution')
+plt.title('Accuracy Distribution 84 test data by 1342-0 mod')
 plt.xlabel('Accuracy (%)')
 plt.ylabel('Number of Sentences')
 plt.grid(True)
-plt.savefig('accuracy_histogram_84_by_84mod.png')
+plt.savefig('accuracy_histogram_84_by_1342-0mod.png')
 plt.show()
 
 print(f'Accuracy results have been saved to {output_csv_path}')
-print('Histogram of accuracy distribution has been saved as "accuracy_histogram_84_by_84mod.png".')
+print('Histogram of accuracy distribution has been saved as "accuracy_histogram_84_by_1342-0mod.png".')
